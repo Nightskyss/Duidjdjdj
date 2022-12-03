@@ -1,4 +1,4 @@
-const { token, default_prefix, color } = require("./config.json");
+const { default_prefix, color } = require("./config.json");
 const Discord = require("discord.js");
 require("@haileybot/sanitize-role-mentions")();
 const client = new Discord.Client({
@@ -22,7 +22,7 @@ module.exports = client;
 });
 Discord.Constants.DefaultOptions.ws.properties.$browser = "Discord Android"
 
-client.login(token)
+client.login(process.env.DISCORD_TOKEN);
 
 const http = require("http");
 http.createServer((_, res) => res.end("ok")).listen(8080)
